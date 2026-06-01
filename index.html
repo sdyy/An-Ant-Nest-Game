@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入侵蟻：蟻巢潛入戰 (Intruder Ant)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css?v=2">
+</head>
+<body>
+    <div id="app-container">
+        <!-- 開始畫面 -->
+        <div id="start-screen" class="screen active">
+            <h1 class="game-title">INTRUDER ANT</h1>
+            <h2 class="game-subtitle">蟻巢潛入戰</h2>
+            <div class="intro-box">
+                <p>你是一隻潛入敵方蟻巢的<strong>入侵蟻</strong>。</p>
+                <p>目標：避開巡邏的<strong>紅色兵蟻</strong>，在迷宮深處尋找<strong>紫色蟻后</strong>，釋放費洛蒙破解其防護罩並將其擊敗！</p>
+            </div>
+            <div class="control-guide">
+                <div class="guide-item">
+                    <span class="key-cap">W</span>
+                    <span class="key-cap">A</span>
+                    <span class="key-cap">S</span>
+                    <span class="key-cap">D</span>
+                    <span class="key-desc">或方向鍵：移動</span>
+                </div>
+                <div class="guide-item">
+                    <span class="key-cap long-key">Space</span>
+                    <span class="key-desc">釋放費洛蒙（引開兵蟻）</span>
+                </div>
+            </div>
+            <button id="start-btn" class="glow-btn">開始潛入</button>
+        </div>
+
+        <!-- 遊戲主體畫面 -->
+        <div id="game-screen" class="screen">
+            <div id="hud-top">
+                <div class="hud-item-group">
+                    <div class="hud-label">生命值</div>
+                    <div id="life-container">
+                        <span class="heart-icon active">❤</span>
+                        <span class="heart-icon active">❤</span>
+                        <span class="heart-icon active">❤</span>
+                    </div>
+                </div>
+                <div class="hud-item-group">
+                    <div class="hud-label">糖分結晶</div>
+                    <div class="hud-value"><span id="sugar-count">0</span> / 10</div>
+                </div>
+                <div class="hud-item-group">
+                    <div class="hud-label">蟻后防護罩節點</div>
+                    <div id="node-indicators">
+                        <span class="node-dot" id="node-0">1</span>
+                        <span class="node-dot" id="node-1">2</span>
+                        <span class="node-dot" id="node-2">3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="canvas-container">
+                <canvas id="game-canvas"></canvas>
+            </div>
+
+            <div id="hud-bottom">
+                <div class="energy-container">
+                    <span class="energy-label">費洛蒙能量</span>
+                    <div class="progress-bar-bg">
+                        <div id="energy-fill" class="progress-fill"></div>
+                    </div>
+                    <span id="energy-percentage" class="energy-val">100%</span>
+                </div>
+                <div class="game-tips">
+                    提示：兵蟻靠近時會有紅色警示，利用 <strong>空白鍵</strong> 排放費洛蒙吸引牠們走入歧途！
+                </div>
+            </div>
+        </div>
+
+        <!-- 遊戲結束/獲勝畫面 -->
+        <div id="end-screen" class="screen">
+            <h1 id="end-title" class="end-title-win">潛入成功</h1>
+            <p id="end-message">你成功破解了防護罩並擊敗了敵方蟻后！</p>
+            <div class="stats-box">
+                <div class="stat-row"><span>收集糖分：</span><span id="stat-sugars">0</span></div>
+                <div class="stat-row"><span>消耗費洛蒙：</span><span id="stat-pheromones">0</span></div>
+            </div>
+            <button id="restart-btn" class="glow-btn">再次潛入</button>
+        </div>
+    </div>
+
+    <!-- 載入遊戲邏輯腳本 -->
+    <script src="js/map.js?v=3"></script>
+    <script src="js/entities.js?v=3"></script>
+    <script src="js/renderer.js?v=3"></script>
+    <script src="js/game.js?v=3"></script>
+</body>
+</html>
