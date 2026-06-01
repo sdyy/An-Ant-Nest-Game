@@ -1,0 +1,23 @@
+# 任務清單：入侵蟻：蟻巢潛入戰 開發
+
+- `[x]` 1. 建立網頁基礎結構與霓虹暗色調樣式
+  - `[x]` 建立 [index.html](file:///C:/Users/10110012/Documents/antigravity/delightful-galileo/index.html) 入口與 HUD UI 結構
+  - `[x]` 建立 [index.css](file:///C:/Users/10110012/Documents/antigravity/delightful-galileo/index.css) 現代毛玻璃霓虹樣式
+- `[x]` 2. 實作迷宮地圖與費洛蒙系統 ([js/map.js](file:///C:/Users/10110012/Documents/antigravity/delightful-galileo/js/map.js))
+  - `[x]` 使用 DFS 演算法隨機生成網格迷宮
+  - `[x]` 實作費洛蒙矩陣衰減邏輯
+  - `[x]` 實作戰爭迷霧探索機制
+- `[x]` 3. 實作遊戲實體與 AI 尋路系統 ([js/entities.js](file:///C:/Users/10110012/Documents/antigravity/delightful-galileo/js/entities.js))
+  - `[x]` 實作玩家類別（位置、血量、費洛蒙能量）
+  - `[x]` 實作兵蟻 AI（巡邏、視線偵測、A* 追擊、費洛蒙誤導尋路）
+  - `[x]` 實作蟻后與 3 個防護節點的解鎖機制
+- `[x]` 4. 實作 Canvas 畫面渲染模組 ([js/renderer.js](file:///C:/Users/10110012/Documents/antigravity/delightful-galileo/js/renderer.js))
+  - `[x]` 繪製地圖牆壁與通道
+  - `[x]` 繪製玩家、兵蟻（紅色警戒圈）與蟻后（紫色防護罩）
+  - `[x]` 渲染費洛蒙螢光綠擴散粒子與戰爭迷霧
+- `[x]` 5. 整合主遊戲循環與控制模組 ([js/game.js](file:///C:/Users/10110012/Documents/antigravity/delightful-galileo/js/game.js))
+  - `[x]` 實作鍵盤移動與費洛蒙釋放控制
+  - `[x]` 整合狀態更新、碰撞檢測與糖分生成收集
+  - `[x]` 實作遊戲開始、過關與結束畫面
+- `[x]` 6. 整合驗證與調整
+  - `[x]` 執行本地端測試確認遊戲邏輯與 AI 行為無誤
